@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Colaborador {
 	private String nomeProjeto;
 	private String nomeFuncionarios;

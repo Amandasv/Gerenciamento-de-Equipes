@@ -17,7 +17,6 @@ public class LeitorCSV<T> {
 								)
 				);
 		this.parser = parser;
-		//arquivo.useDelimiter("[;\\r\\n]+");
 	}
 
 	public boolean hasNext() {

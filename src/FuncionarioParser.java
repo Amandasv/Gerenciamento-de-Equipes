@@ -16,24 +16,3 @@ public class FuncionarioParser implements Parser<Funcionario>{
 		return funcionario;
 	}
 }
-
-/*
-
-		String nome = arquivo.next();
-		LocalDate dataInicio = LocalDate.parse(arquivo.next());
-		LocalDate dataFim = LocalDate.parse(arquivo.next());
-		int numCompetencias = arquivo.nextInt();
-		
-		Projeto projeto = new Projeto(nome, dataInicio, dataFim, numCompetencias);
-		for (int competencia = 0; competencia < numCompetencias; competencia++) {
-			String nomeCompetencia = arquivo.next();
-			projeto.setCompetencia(competencia, nomeCompetencia);
-		}
-				
-		arquivo.close();
-		return projeto;
-	}
-
-}
-
-*/
