@@ -14,24 +14,14 @@ public class Gerenciador {
 	}
 
 	private void run() throws FileNotFoundException {
-//		verificaColaboradores();
-//		verificaCompetencias();
+		verificaColaboradores();
+		verificaCompetencias();
 		verificaProjetos();
-		
+		verificaFuncionarios();
 	}
-
-	
-//	Parser<Aluno> parser = new AlunoParser(); 
-//	CSVReader<Aluno> reader = new CSVReader<>("alunos.csv", parser);
-//	while (reader.hasNext()) {
-//		Aluno aluno = reader.readObject();
-//		System.out.println(aluno);
-//	}
-//	reader.close();	
-	
 	
 	private void verificaProjetos() throws FileNotFoundException {
-		Parser<Projeto> parser = new ProjetoParse();
+		Parser<Projeto> parser = new ProjetoParser();
 		LeitorCSV<Projeto> leitor = new LeitorCSV<>("ArquivosCSV/projetos.csv", parser);
 		leitor.skipLine();
 		while (leitor.hasNext()) {
@@ -43,7 +33,7 @@ public class Gerenciador {
 	}
 
 	private void verificaCompetencias() throws FileNotFoundException{
-		Parser<Competencia> parser = new CompetenciaParse();
+		Parser<Competencia> parser = new CompetenciaParser();
 		LeitorCSV<Competencia> leitor = new LeitorCSV<>("ArquivosCSV/competencias.csv", parser);
 		leitor.skipLine();
 		while (leitor.hasNext()) {
@@ -54,9 +44,9 @@ public class Gerenciador {
 	}
 
 	private void verificaColaboradores() throws FileNotFoundException {
-		Parser<Colaborador> parser = new ColaboradorParse(); 
+		Parser<Colaborador> parser = new ColaboradorParser(); 
 		LeitorCSV<Colaborador> leitor = new LeitorCSV<>("ArquivosCSV/colaboradores.csv", parser);
-		leitor.skipLine(); // cabecalho
+		leitor.skipLine();
 		while (leitor.hasNext()) {
 			Colaborador colaborador = leitor.readObject();
 			System.out.println(colaborador);
@@ -65,5 +55,15 @@ public class Gerenciador {
 	}
 	
 	
+	private void verificaFuncionarios() throws FileNotFoundException {
+		Parser<Funcionario> parser = new FuncionarioParser(); 
+		LeitorCSV<Funcionario> leitor = new LeitorCSV<>("ArquivosCSV/funcionarios.csv", parser);
+		leitor.skipLine();
+		while (leitor.hasNext()) {
+			Funcionario funcionario = leitor.readObject();
+			System.out.println(funcionario);
+		}
+		leitor.close();
+	}
 
 }

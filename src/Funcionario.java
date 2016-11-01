@@ -1,30 +1,29 @@
-
-public class Funcionario {
-	
-}
-
-/* 
 import java.util.Arrays;
 
-public class Colaborador {
-	private String nomeProjeto;
-	private String nomeFuncionarios;
-	private String competencias;
+public class Funcionario {
+	private String nome;
+	private String salario; // Ajustar para double
+	private int numCompetencias;
+	private String[] competencias;
 	
+	public Funcionario(String nome, String salario, int numCompetencias){
+		this.nome = nome;
+		this.salario = salario;
+		this.numCompetencias = numCompetencias;
+		this.competencias = new String[numCompetencias];
+	}
 	
-	public Colaborador(String projeto, String funcionarios, String competencias){
-		this.nomeProjeto = projeto;
-		this.nomeFuncionarios = funcionarios;
-		this.competencias = competencias;
-	}	
+	public void setCompetencia(int competencia, String nomeCompetencia) {
+		if(competencia < 0 || competencia >= competencias.length){
+			throw new ArrayIndexOutOfBoundsException(competencia);			
+		}
+		competencias[competencia] = nomeCompetencia;		
+	}
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Colaborador: [Nome Projeto: " + nomeProjeto + " | Funcionario: " + nomeFuncionarios + " | Competencias: " + competencias + "]";
+		return "Nome: " + nome + " | Salario " +salario + " | numero competencias: " + numCompetencias+ " | competencias: " 
+				+ Arrays.toString(competencias) +" ;";
 	}
-	
-	
 }
 
-*/

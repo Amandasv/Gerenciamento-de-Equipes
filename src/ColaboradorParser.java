@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ColaboradorParse implements Parser<Colaborador> {
+public class ColaboradorParser implements Parser<Colaborador> {
 
 	public Colaborador parse(String dados) {
 		Scanner arquivo = new Scanner(dados);
