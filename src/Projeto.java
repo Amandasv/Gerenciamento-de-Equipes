@@ -26,7 +26,6 @@ public class Projeto {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "Nome: " + nome + " | Inicio:" + dataInicio + " | Fim: " + dataFim + 
 				" | numero competencias: " + numCompetencias + " | competencias: " + Arrays.toString(competencias) + ";";
 	}
