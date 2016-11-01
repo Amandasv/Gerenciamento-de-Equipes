@@ -14,8 +14,9 @@ public class Gerenciador {
 	}
 
 	private void run() throws FileNotFoundException {
-		verificaColaboradores();
-		verificaCompetencias();
+//		verificaColaboradores();
+//		verificaCompetencias();
+		verificaProjetos();
 		
 	}
 
@@ -29,6 +30,18 @@ public class Gerenciador {
 //	reader.close();	
 	
 	
+	private void verificaProjetos() throws FileNotFoundException {
+		Parser<Projeto> parser = new ProjetoParse();
+		LeitorCSV<Projeto> leitor = new LeitorCSV<>("ArquivosCSV/projetos.csv", parser);
+		leitor.skipLine();
+		while (leitor.hasNext()) {
+			Projeto projeto = leitor.readObject();
+			System.out.println(projeto);
+		}
+		leitor.close();
+		
+	}
+
 	private void verificaCompetencias() throws FileNotFoundException{
 		Parser<Competencia> parser = new CompetenciaParse();
 		LeitorCSV<Competencia> leitor = new LeitorCSV<>("ArquivosCSV/competencias.csv", parser);
