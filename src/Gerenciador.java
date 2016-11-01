@@ -17,11 +17,21 @@ public class Gerenciador {
 		verificaColaboradores();
 		
 	}
+
+	
+//	Parser<Aluno> parser = new AlunoParser(); 
+//	CSVReader<Aluno> reader = new CSVReader<>("alunos.csv", parser);
+//	while (reader.hasNext()) {
+//		Aluno aluno = reader.readObject();
+//		System.out.println(aluno);
+//	}
+//	reader.close();
+	
 	
 	
 	private void verificaColaboradores() throws FileNotFoundException {
 		Parser<Colaborador> parser = new ColaboradorParse(); 
-		LeitorCSV<Colaborador> leitor = new LeitorCSV<>("arquivosCSV/colaboradores.csv", parser);
+		LeitorCSV<Colaborador> leitor = new LeitorCSV<>("ArquivosCSV/colaboradores.csv", parser);
 		leitor.skipLine(); // cabecalho
 		while (leitor.hasNext()) {
 			Colaborador colaborador = leitor.readObject();
