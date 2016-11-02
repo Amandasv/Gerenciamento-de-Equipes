@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Funcionario {
 	private String nome;
 	private String salario; // Ajustar para double
@@ -20,10 +18,24 @@ public class Funcionario {
 		competencias[competencia] = nomeCompetencia;		
 	}
 	
+//	public void testaUm(){
+//		for (Funcionario funcionario : Funcionario) {
+//			
+//		}
+//	}
+//	
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | Salario " +salario + " | numero competencias: " + numCompetencias+ " | competencias: " 
-				+ Arrays.toString(competencias) +" ;";
+		String informacoes = "Nome: " + nome + " | Salario " +salario + " | numero competencias: " + numCompetencias+ " | competencias: "; 
+		String competencia= "";
+		for (int i=0;i<numCompetencias;i++) {
+			competencia = competencia + competencias[i] +", ";
+		} 
+				
+		return informacoes + competencia;
 	}
 }
+
+
+
 

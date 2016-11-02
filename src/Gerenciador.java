@@ -13,9 +13,9 @@ public class Gerenciador {
 	}
 
 	private void run() throws FileNotFoundException {
-//		verificaColaboradores();
-//		verificaCompetencias();
-//		verificaProjetos();
+		verificaColaboradores();
+		verificaCompetencias();
+		verificaProjetos();
 		verificaFuncionarios();
 	}
 	

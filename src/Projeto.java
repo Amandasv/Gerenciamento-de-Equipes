@@ -26,7 +26,14 @@ public class Projeto {
 	
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | Inicio:" + dataInicio + " | Fim: " + dataFim + 
-				" | numero competencias: " + numCompetencias + " | competencias: " + Arrays.toString(competencias) + ";";
+		String informacoes =  "Nome: " + nome + " | Inicio:" + dataInicio + " | Fim: " + dataFim + 
+				" | numero competencias: " + numCompetencias + " | competencias: ";
+		String competencia= "";
+		for (int i=0;i<numCompetencias;i++) {
+			competencia = competencia + competencias[i] +", ";
+		} 
+				
+		return informacoes + competencia;
 	}
 }
+
