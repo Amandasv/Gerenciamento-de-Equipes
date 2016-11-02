@@ -13,61 +13,15 @@ public class Gerenciador {
 	}
 
 	private void run() throws FileNotFoundException {
-//		verificaColaboradores();
-//		verificaCompetencias();
-//		verificaProjetos();
-		verificaFuncionarios();
-	}
 
-	private void verificaProjetos() throws FileNotFoundException {
-		Parser<Projeto> parser = new ProjetoParser();
-		LeitorCSV<Projeto> leitor = new LeitorCSV<>("ArquivosCSV/projetos.csv", parser);
-		leitor.skipLine();
-		while (leitor.hasNext()) {
-			Projeto projeto = leitor.readObject();
-			System.out.println(projeto);
-		}
-		leitor.close();
+		CarregaArquivos arquivos = new CarregaArquivos();
+		arquivos.verificaFuncionarios();
+		arquivos.verificaColaboradores();
+		arquivos.verificaCompetencias();
+		arquivos.verificaProjetos();
 		
 	}
 
-	private void verificaCompetencias() throws FileNotFoundException{
-		Parser<Competencia> parser = new CompetenciaParser();
-		LeitorCSV<Competencia> leitor = new LeitorCSV<>("ArquivosCSV/competencias.csv", parser);
-		leitor.skipLine();
-		while (leitor.hasNext()) {
-			Competencia competencia = leitor.readObject();
-			System.out.println(competencia);
-		}
-		leitor.close();
-	}
-
-	private void verificaColaboradores() throws FileNotFoundException {
-		Parser<Colaborador> parser = new ColaboradorParser(); 
-		LeitorCSV<Colaborador> leitor = new LeitorCSV<>("ArquivosCSV/colaboradores.csv", parser);
-		leitor.skipLine();
-		while (leitor.hasNext()) {
-			Colaborador colaborador = leitor.readObject();
-			System.out.println(colaborador);
-		}
-		leitor.close();
-	}
 	
-	
-	private void verificaFuncionarios() throws FileNotFoundException {
-		Parser<Funcionario> parser = new FuncionarioParser(); 
-		LeitorCSV<Funcionario> leitor = new LeitorCSV<>("ArquivosCSV/funcionarios.csv", parser);
-		leitor.skipLine();
-		Vetor<Funcionario> vetFuncionario = new Vetor<>();
-		while (leitor.hasNext()) {
-			Funcionario funcionario = leitor.readObject();
-//			System.out.println(funcionario);
-			vetFuncionario.append(funcionario);
-//			System.out.println(vetFuncionario.size());
-			
-		}
-		System.out.println(vetFuncionario.get(2));
-		leitor.close();
-	}
 
 }
