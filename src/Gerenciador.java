@@ -10,13 +10,12 @@ public class Gerenciador {
 			System.err.println("Nao encontrou arquivo.");
 			System.err.println(e.getMessage());
 		}
-
 	}
 
 	private void run() throws FileNotFoundException {
-		verificaColaboradores();
-		verificaCompetencias();
-		verificaProjetos();
+//		verificaColaboradores();
+//		verificaCompetencias();
+//		verificaProjetos();
 		verificaFuncionarios();
 	}
 	

@@ -13,7 +13,7 @@ public class Colaborador {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Colaborador: [Nome Projeto: " + nomeProjeto + " | Funcionario: " + nomeFuncionarios + " | Competencias: " + competencias + "]";
+		return "Nome Projeto: " + nomeProjeto + " | Funcionario: " + nomeFuncionarios + " | Competencias: " + competencias + ";";
 	}
 	
 	
