@@ -18,12 +18,7 @@ public class Funcionario {
 		competencias[competencia] = nomeCompetencia;		
 	}
 	
-//	public void testaUm(){
-//		for (Funcionario funcionario : Funcionario) {
-//			
-//		}
-//	}
-//	
+
 	@Override
 	public String toString() {
 		String informacoes = "Nome: " + nome + " | Salario " +salario + " | numero competencias: " + numCompetencias+ " | competencias: "; 

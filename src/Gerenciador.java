@@ -13,12 +13,12 @@ public class Gerenciador {
 	}
 
 	private void run() throws FileNotFoundException {
-		verificaColaboradores();
-		verificaCompetencias();
-		verificaProjetos();
+//		verificaColaboradores();
+//		verificaCompetencias();
+//		verificaProjetos();
 		verificaFuncionarios();
 	}
-	
+
 	private void verificaProjetos() throws FileNotFoundException {
 		Parser<Projeto> parser = new ProjetoParser();
 		LeitorCSV<Projeto> leitor = new LeitorCSV<>("ArquivosCSV/projetos.csv", parser);
@@ -58,10 +58,15 @@ public class Gerenciador {
 		Parser<Funcionario> parser = new FuncionarioParser(); 
 		LeitorCSV<Funcionario> leitor = new LeitorCSV<>("ArquivosCSV/funcionarios.csv", parser);
 		leitor.skipLine();
+		Vetor<Funcionario> vetFuncionario = new Vetor<>();
 		while (leitor.hasNext()) {
 			Funcionario funcionario = leitor.readObject();
-			System.out.println(funcionario);
+//			System.out.println(funcionario);
+			vetFuncionario.append(funcionario);
+//			System.out.println(vetFuncionario.size());
+			
 		}
+		System.out.println(vetFuncionario.get(2));
 		leitor.close();
 	}
 
