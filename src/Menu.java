@@ -22,10 +22,7 @@ public class Menu {
 
 	public int getOption() {		
 		Scanner leitor = new Scanner(System.in);
-		
-		
-		
-		int opcao = leitor.nextInt();
+				int opcao = leitor.nextInt();
 		return opcao;		
 	}//fecha getOption
 	
