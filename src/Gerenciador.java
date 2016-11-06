@@ -35,6 +35,10 @@ public class Gerenciador {
 		importaDados("src/ArquivosCSV/colaboradores.csv", colaboradorObejto, colaboradorParser, colaboradorVetor);
 		importaDados("src/ArquivosCSV/funcionarios.csv", funcionarioObjeto, funcionarioParser, FuncionarioVetor);
 		
+		System.out.println("Sistema de Gerenciamento de Equipes por Competências");
+		
+		Menu menu = new Menu();
+		
 	}
 	
 	private <V> void importaDados(String arquivoCaminho, V objeto, Parser parser, Vetor<V> vetor) throws FileNotFoundException{
