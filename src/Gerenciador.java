@@ -163,10 +163,18 @@ public class Gerenciador {
 				break;
 				
 			case 3:	
+				System.out.println("\nO que você gostaria de deletar?");
 				menuDeletar.show();
 				switch (menuCadastrar.getOption()) {
 
 				case 1:
+					System.out.println("Digite o indice do projeto que deseja excluir:");
+					projetoVetor.getVetor();
+					
+					int excluirP = leitorTeclado.nextInt();
+					System.out.println(excluirP);
+					projetoVetor.remove(excluirP);
+					
 					break;
 				case 2:				
 					

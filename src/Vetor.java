@@ -38,10 +38,6 @@ public class Vetor <V> {
 	public int size() {
 		return numeroElementos;
 	}
-
-	public V last(){
-		return dados[numeroElementos];
-	}
 	
 	public void insert(int index, V valor) {
 		validaIndex(index);
@@ -62,10 +58,28 @@ public class Vetor <V> {
 	public void remove(int index) {
 		validaIndex(index);
 		for (int i = index; i < numeroElementos-1; i++) {
+			if(dados[i+1] == null){
+				dados[i] = null;
+			}else{
 			dados[i] = dados[i+1];
+			}
 		}
 		numeroElementos--;
 	}
 	
+	/*
+	 * public void remove(int index) {
+		validaIndex(index);
+		for (int i = index; i < numeroElementos; i++) {
+				if(dados[i+1] == null){
+					dados[i] = null;
+				}else{
+				dados[i] = dados[i+1];
+				}//fecha if-else
+		}
+		numeroElementos--;
+	}//fecha remove
+	 * 
+	 */
 	
 }
