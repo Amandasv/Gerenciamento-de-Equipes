@@ -33,6 +33,10 @@ public class Projeto {
 		}
 	}
 	
+	public String getNome(){
+		return this.nome;
+	}
+	
 	@Override
 	public String toString() {
 		String informacoes =  "Nome: " + nome + " | Inicio: " + dataInicio + " | Fim: " + dataFim + 
@@ -45,7 +49,7 @@ public class Projeto {
 				competencia = competencia + competencias[i] +");";
 		} 
 				
-		return informacoes + competencia;
+		return informacoes + competencia + "\n";
 	}
 }
 

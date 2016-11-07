@@ -119,7 +119,7 @@ public class Gerenciador {
 
 				case 1:				
 					System.out.println("Projetos");
-					projetoVetor.getVetor();
+					projetoVetor.getVetor();					
 					break;
 				case 2:				
 					System.out.println("Competencias");
@@ -168,12 +168,14 @@ public class Gerenciador {
 				switch (menuCadastrar.getOption()) {
 
 				case 1:
-					System.out.println("Digite o indice do projeto que deseja excluir:");
+					System.out.println("\nDigite o indice do projeto que deseja excluir:\n");
 					projetoVetor.getVetor();
-					
-					int excluirP = leitorTeclado.nextInt();
-					System.out.println(excluirP);
+										
+					int excluirP = leitorTeclado.nextInt();	
+					System.out.println("Excluindo o projeto: " + projetoVetor.get(excluirP).getNome());
 					projetoVetor.remove(excluirP);
+					
+					System.out.println("Excluido com sucesso!");
 					
 					break;
 				case 2:				
