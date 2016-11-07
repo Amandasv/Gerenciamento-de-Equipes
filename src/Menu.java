@@ -11,21 +11,11 @@ public class Menu {
 		numOpcoes++;
 	}
 	
-	/* 
-	 * Console.print("\nMenu:\n");
-		for (int i = 0; i < numOpcoes; i++) {
-			Console.println("[", i + 1, "] ", opcoes[i].getTexto());
-		}
-		Console.println("ESCOLHA UMA OP��O: ");
-	 * 
-	 */
-
 	public void show() {		
 		
 		for (int i = 0; i < numOpcoes; i++) {
 			System.out.println("[" + (i+1) + "] " + opcoes[i].getTexto());			
-		}		
-		
+		}
 	}
 
 	public int getOption() {		

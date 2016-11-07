@@ -16,12 +16,11 @@ public class Funcionario {
 			throw new ArrayIndexOutOfBoundsException(competencia);			
 		}
 		competencias[competencia] = nomeCompetencia;		
-	}
-	
+	}	
 
 	@Override
 	public String toString() {
-		String informacoes = "Nome: " + nome + " | Salario " +salario + " \n"
+		String informacoes = "Nome: " + nome + " | Salario R$" +salario + " \n"
 				+ "Competencias: " + numCompetencias+ "("; 
 		String competencia= "";
 		for (int i=0;i<numCompetencias;i++) {

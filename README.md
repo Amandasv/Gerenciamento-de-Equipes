@@ -11,7 +11,7 @@ O objetivo deste sistema é criar um sistema para gerenciamento dos projetos de 
 Desenvolver, utilizando a linguagem de programação Java, um sistema que permita:
 
 - [x] Ler os dados sobre os funcionários e projetos, a partir de arquivos, na inicialização do sistema.
-- [ ] Permitir ao usuário criar novos projetos, definindo para cada projeto, o seu nome, datas de inicio e fim, e as competências necessárias ao projeto.
+- [x] Permitir ao usuário criar novos projetos, definindo para cada projeto, o seu nome, datas de inicio e fim, e as competências necessárias ao projeto.
 - [ ] Permitir ao usuário cadastrar novos funcionário, incluindo seu nome, salário e competências.
 - [ ] Permitir que se exclua projetos.
 - [ ] Permitir que se exclua funcionários.

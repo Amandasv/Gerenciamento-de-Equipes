@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Projeto {
 	private String nome;
@@ -6,6 +7,8 @@ public class Projeto {
 	private LocalDate dataFim;
 	private int numCompetencias;
 	private String[] competencias;
+	
+	Scanner leitorTeclado = new Scanner(System.in);
 	
 	public Projeto(String nome, LocalDate inicio, LocalDate fim, int numCompetencias){
 		this.nome = nome;
@@ -20,6 +23,14 @@ public class Projeto {
 			throw new ArrayIndexOutOfBoundsException(competencia);			
 		}
 		competencias[competencia] = nomeCompetencia;		
+	}
+	
+	public void addCompetencia(){
+		for (int i = 0; i < competencias.length; i++) {
+			System.out.println("Nome da competencia [" + (i+1)+"]: ");
+			if(i < competencias.length)
+				competencias[i] = leitorTeclado.next();		
+		}
 	}
 	
 	@Override

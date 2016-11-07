@@ -1,4 +1,6 @@
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Gerenciador {
 
@@ -11,6 +13,8 @@ public class Gerenciador {
 			System.err.println(e.getMessage());
 		}
 	}
+	
+	Scanner leitorTeclado = new Scanner(System.in);
 	
 	Parser<Projeto> projetoParser = new ProjetoParser();
 	Vetor<Projeto> projetoVetor = new Vetor<>();
@@ -117,12 +121,12 @@ public class Gerenciador {
 					projetoVetor.getVetor();
 					break;
 				case 2:				
-					System.out.println("Colaboradores");
-					colaboradorVetor.getVetor();
-					break;
-				case 3:				
 					System.out.println("Competencias");
 					competenciaVetor.getVetor();
+					break;
+				case 3:				
+					System.out.println("Colaboradores");
+					colaboradorVetor.getVetor();					
 					break;
 				case 4:
 					System.out.println("Funcionarios");
@@ -133,11 +137,13 @@ public class Gerenciador {
 				}
 				break;
 				
-			case 2:		
+			case 2:
+				System.out.println("\nO que você gostaria de cadastrar?");
 				menuCadastrar.show();
 				switch (menuCadastrar.getOption()) {
 
 				case 1:	
+					cadastraProjeto();
 					break;
 				case 2:
 					break;
@@ -172,11 +178,32 @@ public class Gerenciador {
 			default:
 				System.exit(-1);
 			}
-		} while (true);		
-		
-		
+		} while (true);
 		
 	}
+	
+	private void cadastraProjeto(){
+		System.out.println("\nNovo Projeto\n");
+		
+		System.out.println("Nome do projeto:");
+		String nome = leitorTeclado.nextLine();
+		
+		System.out.println("Data de inicio [AAAA-MM-DD]:");		
+		LocalDate inicio = LocalDate.parse(leitorTeclado.next());
+		
+		System.out.println("Data final [AAAA-MM-DD]:");		
+		LocalDate fim = LocalDate.parse(leitorTeclado.next());
+		
+		System.out.println("Numero de competencias");
+		int numCompetencias = leitorTeclado.nextInt();
+		
+		Projeto projeto = new Projeto(nome, inicio, fim, numCompetencias);
+		
+		projeto.addCompetencia();
+		
+		projetoVetor.append(projeto);
+	}
+	
 	
 	private <V> void importaDados(String arquivoCaminho, V objeto, Parser parser, Vetor<V> vetor) throws FileNotFoundException{
 		LeitorCSV<V> leitor = new LeitorCSV<>(arquivoCaminho, parser);
