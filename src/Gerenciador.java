@@ -157,8 +157,8 @@ public class Gerenciador {
 				}
 				break;
 				
-			case 3:			//menu1
-				menuDeletar.show();//menu4 de exclusao
+			case 3:	
+				menuDeletar.show();
 				switch (menuCadastrar.getOption()) {
 
 				case 1:
@@ -198,13 +198,21 @@ public class Gerenciador {
 		int numCompetencias = leitorTeclado.nextInt();
 		
 		Projeto projeto = new Projeto(nome, inicio, fim, numCompetencias);
+		System.out.println("Digite o indice da competencia desejada:");
+		competenciaVetor.getVetor();	
 		
-		projeto.addCompetencia();
+		for (int i = 0; i < numCompetencias; i++) {
+			System.out.println("Competencia [" + (i+1) + "]:");
+			int escolhido = leitorTeclado.nextInt();				
+			String nomeCompetencia = competenciaVetor.get(escolhido).getNomeCompetencia();
+			System.out.println("Competencia [" + (i+1) + "]: "+nomeCompetencia);
+			projeto.setCompetencia(i, nomeCompetencia);
+		}	
 		
 		projetoVetor.append(projeto);
+		System.out.println("Projeto cadastrado com sucesso\n");
 	}
-	
-	
+			
 	private <V> void importaDados(String arquivoCaminho, V objeto, Parser parser, Vetor<V> vetor) throws FileNotFoundException{
 		LeitorCSV<V> leitor = new LeitorCSV<>(arquivoCaminho, parser);
 		leitor.skipLine();

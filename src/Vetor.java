@@ -30,7 +30,7 @@ public class Vetor <V> {
 		for(int i = 0; i < dados.length; i++){
 			if(dados[i] != null){
 				System.out.print("Indice: " + i + " | ");
-				System.out.println(dados[i] + "\n");
+				System.out.println(dados[i]);
 			}
 		}		
 	}
@@ -39,6 +39,10 @@ public class Vetor <V> {
 		return numeroElementos;
 	}
 
+	public V last(){
+		return dados[numeroElementos];
+	}
+	
 	public void insert(int index, V valor) {
 		validaIndex(index);
 		aumentaEspaco();

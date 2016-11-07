@@ -35,7 +35,7 @@ public class Projeto {
 	
 	@Override
 	public String toString() {
-		String informacoes =  "Nome: " + nome + " | Inicio:" + dataInicio + " | Fim: " + dataFim + 
+		String informacoes =  "Nome: " + nome + " | Inicio: " + dataInicio + " | Fim: " + dataFim + 
 				"\nCompetencias: " + numCompetencias + "(";
 		String competencia= "";
 		for (int i=0;i<numCompetencias;i++) {

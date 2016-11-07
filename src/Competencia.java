@@ -5,6 +5,10 @@ public class Competencia {
 		this.nome = nomeCompetencia;
 	}
 	
+	public String getNomeCompetencia(){
+		return this.nome;
+	}
+	
 	@Override
 	public String toString() {
 
