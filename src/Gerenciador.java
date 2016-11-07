@@ -149,7 +149,7 @@ public class Gerenciador {
 					cadastro.cadastraProjeto(competenciaVetor, projetoVetor);					
 					break;
 				case 2:
-					
+					cadastro.cadastraCompetencias(competenciaVetor);
 					break;
 				case 3:
 					

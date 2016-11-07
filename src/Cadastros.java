@@ -38,7 +38,7 @@ public class Cadastros {
 		}	
 		
 		projetoVetor.append(projeto);
-		System.out.println("Projeto cadastrado com sucesso\n");
+		System.out.println("Projeto cadastrado com sucesso");
 	}
 	
 	public void cadastraFuncionario(Vetor<Competencia> competenciaVetor, Vetor<Funcionario> funcionarioVetor){
@@ -67,7 +67,20 @@ public class Cadastros {
 		}		
 		
 		funcionarioVetor.append(funcionario);
-		System.out.println("Funcionário cadastrado com sucesso\n");
-		
+		System.out.println("Funcionário cadastrado com sucesso");		
 	}
+	
+	public void cadastraCompetencias(Vetor<Competencia> competenciaVetor){
+		System.out.println("Competencias atuais:");
+		competenciaVetor.getVetor();
+		
+		System.out.println("Nome da nova competencia: ");
+		String nome = leitorTeclado.nextLine();
+		
+		Competencia competencia = new Competencia(nome);
+		
+		competenciaVetor.append(competencia);
+		System.out.println("Competencia cadastrada com sucesso");
+	}
+	
 }
