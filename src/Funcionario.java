@@ -16,7 +16,11 @@ public class Funcionario {
 			throw new ArrayIndexOutOfBoundsException(competencia);			
 		}
 		competencias[competencia] = nomeCompetencia;		
-	}	
+	}
+	
+	public String getNome(){
+		return this.nome;
+	}
 
 	@Override
 	public String toString() {
@@ -30,7 +34,7 @@ public class Funcionario {
 				competencia = competencia + competencias[i] +");";
 		} 
 				
-		return informacoes + competencia;
+		return informacoes + competencia + "\n";
 	}
 }
 

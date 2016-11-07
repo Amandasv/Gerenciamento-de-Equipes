@@ -118,19 +118,19 @@ public class Gerenciador {
 				switch (menuConsultar.getOption()) {
 
 				case 1:				
-					System.out.println("Projetos:\n");
+					System.out.println("\n>Projetos:\n");
 					projetoVetor.getVetor();					
 					break;
 				case 2:				
-					System.out.println("Competencias:\n");
+					System.out.println("\n>Competencias:\n");
 					competenciaVetor.getVetor();
 					break;
 				case 3:				
-					System.out.println("Colaboradores:\n");
+					System.out.println("\n>Colaboradores:\n");
 					colaboradorVetor.getVetor();					
 					break;
 				case 4:
-					System.out.println("Funcionarios:\n");
+					System.out.println("\n>Funcionarios:\n");
 					funcionarioVetor.getVetor();
 					break;				
 				default:
@@ -168,9 +168,10 @@ public class Gerenciador {
 				switch (menuCadastrar.getOption()) {
 
 				case 1:
-					System.out.println("\nDigite o indice do projeto que deseja excluir:\n");
+					System.out.println("\n>Projetos atuais:\n");
 					projetoVetor.getVetor();
-										
+					
+					System.out.print("\nDigite o indice do projeto que deseja excluir:");										
 					int excluirP = leitorTeclado.nextInt();	
 					System.out.println("Excluindo o projeto: " + projetoVetor.get(excluirP).getNome());
 					projetoVetor.remove(excluirP);
@@ -179,9 +180,10 @@ public class Gerenciador {
 					
 					break;
 				case 2:				
-					System.out.println("\nDigite o indice da competencia que deseja excluir:\n");
+					System.out.println("\n>Competencias atuais:\n");
 					competenciaVetor.getVetor();
 										
+					System.out.print("\nDigite o indice da competencia que deseja excluir:");
 					int excluirC = leitorTeclado.nextInt();	
 					System.out.println("Excluindo a competencia: " + competenciaVetor.get(excluirC).getNomeCompetencia());
 					competenciaVetor.remove(excluirC);
@@ -192,6 +194,15 @@ public class Gerenciador {
 					
 					break;
 				case 4:
+					System.out.println("\n>Funcionarios atuais:\n");
+					funcionarioVetor.getVetor();
+										
+					System.out.print("\nDigite o indice do funcionario que deseja excluir: ");
+					int excluirF = leitorTeclado.nextInt();	
+					System.out.println("Excluindo o funcionario: " + funcionarioVetor.get(excluirF).getNome());
+					funcionarioVetor.remove(excluirF);
+					
+					System.out.println("Excluido com sucesso!");
 					break;				
 				default:
 					break;

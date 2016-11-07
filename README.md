@@ -14,7 +14,7 @@ Desenvolver, utilizando a linguagem de programação Java, um sistema que permit
 - [x] Permitir ao usuário criar novos projetos, definindo para cada projeto, o seu nome, datas de inicio e fim, e as competências necessárias ao projeto.
 - [x] Permitir ao usuário cadastrar novos funcionário, incluindo seu nome, salário e competências.
 - [x] Permitir que se exclua projetos.
-- [ ] Permitir que se exclua funcionários.
+- [x] Permitir que se exclua funcionários.
 - [x] Permitir ao usuário cadastrar novas competências.
 - [ ] Permitir ao usuário consultar os projetos ativos.
 - [ ] Permitir ao usuário associar funcionários aos projetos.
