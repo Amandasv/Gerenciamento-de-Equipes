@@ -5,9 +5,10 @@ public class Projeto {
 	private String nome;
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
+	private LocalDate dataAtual = LocalDate.now();
 	private int numCompetencias;
 	private String[] competencias;
-	
+		
 	Scanner leitorTeclado = new Scanner(System.in);
 	
 	public Projeto(String nome, LocalDate inicio, LocalDate fim, int numCompetencias){
@@ -36,6 +37,13 @@ public class Projeto {
 	public String getNome(){
 		return this.nome;
 	}
+	
+	public boolean getSituacaoAtiva(){
+		if(dataInicio.isEqual(dataAtual) || dataInicio.isBefore(dataAtual) && dataFim.isAfter(dataAtual)){
+			return true;
+		}
+		return false;
+	}	
 	
 	@Override
 	public String toString() {

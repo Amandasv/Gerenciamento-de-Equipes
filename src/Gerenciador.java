@@ -45,8 +45,10 @@ public class Gerenciador {
 		
 		Menu menuInicial = new Menu();
 		Menu menuConsultar = new Menu();
+		Menu menuConsultaFiltrada = new Menu();
 		Menu menuCadastrar = new Menu();
 		Menu menuDeletar = new Menu();
+		
 				
 		
 		Opcao consultar = new Opcao("Consultar");
@@ -65,6 +67,15 @@ public class Gerenciador {
 		
 		Opcao consularProjetos = new Opcao("Consultar Projetos");
 		menuConsultar.addOption(consularProjetos);
+		
+		Opcao consultarPrAtivos = new Opcao("Projetos Ativos");
+		menuConsultaFiltrada.addOption(consultarPrAtivos);
+		
+		Opcao consultarPrInativos = new Opcao("Projetos Inativos");
+		menuConsultaFiltrada.addOption(consultarPrInativos);
+		
+		Opcao consultarPrTodos = new Opcao("Todos Projetos");
+		menuConsultaFiltrada.addOption(consultarPrTodos);
 		
 		Opcao consultarCompetencias = new Opcao("Consultar Competencias");
 		menuConsultar.addOption(consultarCompetencias);
@@ -117,9 +128,36 @@ public class Gerenciador {
 				
 				switch (menuConsultar.getOption()) {
 
-				case 1:				
-					System.out.println("\n>Projetos:\n");
-					projetoVetor.getVetor();					
+				case 1:
+					System.out.println("\nQuais projetos deseja consultar?");
+					menuConsultaFiltrada.show();
+					
+					switch (menuConsultaFiltrada.getOption()) {
+					case 1:
+						System.out.println("\n>Projetos Ativos:\n");
+						for (int indiceProjetos = 0; indiceProjetos < projetoVetor.size(); indiceProjetos++) {
+							if(projetoVetor.get(indiceProjetos).getSituacaoAtiva()){
+								System.out.println("Indice: "+ indiceProjetos + " | " + projetoVetor.get(indiceProjetos));
+							}
+						}
+						
+						break;
+						
+					case 2:
+						System.out.println("\n>Projetos Inativos:\n");
+						for (int indiceProjetos = 0; indiceProjetos < projetoVetor.size(); indiceProjetos++) {
+							if(projetoVetor.get(indiceProjetos).getSituacaoAtiva() == false){
+								System.out.println("Indice: "+ indiceProjetos + " | " + projetoVetor.get(indiceProjetos));
+							}
+						}
+						
+						break;
+					case 3:
+						System.out.println("\n>Projetos:\n");
+						projetoVetor.getVetor();
+					default:
+						break;
+					}					
 					break;
 				case 2:				
 					System.out.println("\n>Competencias:\n");
