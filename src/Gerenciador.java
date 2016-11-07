@@ -41,7 +41,7 @@ public class Gerenciador {
 				
 		System.out.println("====================================================");
 		System.out.println("Sistema de Gerenciamento de Equipes por Competências");
-		System.out.println("====================================================\n");
+		System.out.println("====================================================");
 		
 		Menu menuInicial = new Menu();
 		Menu menuConsultar = new Menu();
@@ -106,7 +106,8 @@ public class Gerenciador {
 		menuDeletar.addOption(voltar);
 		
 		
-		do {					
+		do {
+			System.out.println("");
 			menuInicial.show();
 			switch (menuInicial.getOption()) {
 			
@@ -140,17 +141,21 @@ public class Gerenciador {
 			case 2:
 				System.out.println("\nO que você gostaria de cadastrar?");
 				menuCadastrar.show();
+				Cadastros cadastro = new Cadastros();
+				
 				switch (menuCadastrar.getOption()) {
 
 				case 1:	
-					cadastraProjeto();
+					cadastro.cadastraProjeto(competenciaVetor, projetoVetor);					
 					break;
 				case 2:
+					
 					break;
 				case 3:
 					
 					break;
 				case 4:
+					cadastro.cadastraFuncionario(competenciaVetor, funcionarioVetor);
 					break;				
 				default:
 					break;
@@ -181,38 +186,7 @@ public class Gerenciador {
 		} while (true);
 		
 	}
-	
-	private void cadastraProjeto(){
-		System.out.println("\nNovo Projeto\n");
-		
-		System.out.println("Nome do projeto:");
-		String nome = leitorTeclado.nextLine();
-		
-		System.out.println("Data de inicio [AAAA-MM-DD]:");		
-		LocalDate inicio = LocalDate.parse(leitorTeclado.next());
-		
-		System.out.println("Data final [AAAA-MM-DD]:");		
-		LocalDate fim = LocalDate.parse(leitorTeclado.next());
-		
-		System.out.println("Numero de competencias");
-		int numCompetencias = leitorTeclado.nextInt();
-		
-		Projeto projeto = new Projeto(nome, inicio, fim, numCompetencias);
-		System.out.println("Digite o indice da competencia desejada:");
-		competenciaVetor.getVetor();	
-		
-		for (int i = 0; i < numCompetencias; i++) {
-			System.out.println("Competencia [" + (i+1) + "]:");
-			int escolhido = leitorTeclado.nextInt();				
-			String nomeCompetencia = competenciaVetor.get(escolhido).getNomeCompetencia();
-			System.out.println("Competencia [" + (i+1) + "]: "+nomeCompetencia);
-			projeto.setCompetencia(i, nomeCompetencia);
-		}	
-		
-		projetoVetor.append(projeto);
-		System.out.println("Projeto cadastrado com sucesso\n");
-	}
-			
+					
 	private <V> void importaDados(String arquivoCaminho, V objeto, Parser parser, Vetor<V> vetor) throws FileNotFoundException{
 		LeitorCSV<V> leitor = new LeitorCSV<>(arquivoCaminho, parser);
 		leitor.skipLine();
@@ -224,4 +198,6 @@ public class Gerenciador {
 		
 		leitor.close();
 	}
+	
+	
 }

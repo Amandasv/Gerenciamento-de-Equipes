@@ -20,7 +20,7 @@ public class Funcionario {
 
 	@Override
 	public String toString() {
-		String informacoes = "Nome: " + nome + " | Salario R$" +salario + " \n"
+		String informacoes = "Nome: " + nome + " | Salario R$ " +salario + " \n"
 				+ "Competencias: " + numCompetencias+ "("; 
 		String competencia= "";
 		for (int i=0;i<numCompetencias;i++) {
