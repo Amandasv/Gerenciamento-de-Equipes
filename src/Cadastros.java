@@ -83,4 +83,61 @@ public class Cadastros {
 		System.out.println("\nCompetencia cadastrada com sucesso!!");
 	}
 	
+	public void associarColaborador(Vetor<Colaborador> colaboradorVetor, Vetor<Funcionario> funcionarioVetor, Vetor<Projeto> projetoVetor){
+		
+		System.out.println("\nEsses sao os projetos que voce pode associar\n");
+		projetoVetor.getVetor();
+		
+		System.out.print("\nDigite o indice do projeto desejado: ");
+		int indiceProjeto = leitorTeclado.nextInt();
+		
+		System.out.println("\nProjeto:");
+
+		Projeto projetoEscolhido = projetoVetor.get(indiceProjeto);  		
+		
+		System.out.println(projetoEscolhido);		
+		String nomeProjeto = projetoEscolhido.getNome();
+		
+		System.out.println("Agora voce precisa escolher o funcionario para associar ");
+
+		System.out.println("\nEsses sao os funcionarios disponiveis \n");
+		funcionarioVetor.getVetor();
+		System.out.print("Digite o indice do funcionario desejado: ");
+		int indiceFuncionario = leitorTeclado.nextInt();
+		
+		System.out.print("\nFuncionario: \n");			
+		Funcionario funcionarioEscolhido = funcionarioVetor.get(indiceFuncionario);
+		System.out.print(funcionarioEscolhido);
+		String nomeFuncionario = funcionarioEscolhido.getNome();
+		
+		System.out.println("\nSobre qual competencia de " + nomeFuncionario + " voce deseja associar? \n");			
+		funcionarioEscolhido.getCompetencias();
+		
+		System.out.print("\nDigite o indice da competencia desejada: ");
+		int indiceCompetencia = leitorTeclado.nextInt();
+		
+		System.out.println("\n" + funcionarioEscolhido.getNomeCompetencia(indiceCompetencia));
+		String competencia = funcionarioEscolhido.getNomeCompetencia(indiceCompetencia);
+		
+		System.out.println("\nInformacoes a serem associadas:\n");
+
+		System.out.println(">Projeto: ");
+		System.out.println(projetoEscolhido);
+		System.out.println(">Funcionario: ");
+		System.out.println(funcionarioEscolhido);
+		System.out.println(">Competencia: ");
+		System.out.println(competencia);
+		
+		System.out.println("\nDigite 1 se voce confirma");
+		int confirma = leitorTeclado.nextInt();
+		
+		if(confirma == 1){
+			Colaborador colaborador = new Colaborador(nomeProjeto, nomeFuncionario, competencia);
+			colaboradorVetor.append(colaborador);
+			
+			System.out.println("\nAssociacao feita com sucesso!!");
+		}
+		
+	}
+	
 }

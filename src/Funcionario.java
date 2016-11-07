@@ -21,6 +21,16 @@ public class Funcionario {
 	public String getNome(){
 		return this.nome;
 	}
+	
+	public void getCompetencias(){
+		for (int i=0;i<numCompetencias;i++) {
+			System.out.println("Indice: " + i + " | " + competencias[i]);
+		}
+	}
+	
+	public String getNomeCompetencia(int competencia){
+		return competencias[competencia];
+	}
 
 	@Override
 	public String toString() {

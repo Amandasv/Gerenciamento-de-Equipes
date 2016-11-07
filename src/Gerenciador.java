@@ -94,8 +94,8 @@ public class Gerenciador {
 		Opcao cadastrarCompetencias = new Opcao("Cadastrar Competencias");
 		menuCadastrar.addOption(cadastrarCompetencias);
 				
-		Opcao cadastrarColaborador = new Opcao("Cadastrar Colaborador");
-		menuCadastrar.addOption(cadastrarColaborador);
+		Opcao associarColaborador = new Opcao("Associar Colaborador");
+		menuCadastrar.addOption(associarColaborador);
 		
 		Opcao cadastrarFuncionarios = new Opcao("Cadastrar Funcionarios");
 		menuCadastrar.addOption(cadastrarFuncionarios);		
@@ -190,7 +190,7 @@ public class Gerenciador {
 					cadastro.cadastraCompetencias(competenciaVetor);
 					break;
 				case 3:
-					
+					cadastro.associarColaborador(colaboradorVetor, funcionarioVetor, projetoVetor);
 					break;
 				case 4:
 					cadastro.cadastraFuncionario(competenciaVetor, funcionarioVetor);
