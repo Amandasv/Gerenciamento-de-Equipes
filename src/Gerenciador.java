@@ -118,19 +118,19 @@ public class Gerenciador {
 				switch (menuConsultar.getOption()) {
 
 				case 1:				
-					System.out.println("Projetos");
+					System.out.println("Projetos:\n");
 					projetoVetor.getVetor();					
 					break;
 				case 2:				
-					System.out.println("Competencias");
+					System.out.println("Competencias:\n");
 					competenciaVetor.getVetor();
 					break;
 				case 3:				
-					System.out.println("Colaboradores");
+					System.out.println("Colaboradores:\n");
 					colaboradorVetor.getVetor();					
 					break;
 				case 4:
-					System.out.println("Funcionarios");
+					System.out.println("Funcionarios:\n");
 					funcionarioVetor.getVetor();
 					break;				
 				default:
@@ -179,7 +179,14 @@ public class Gerenciador {
 					
 					break;
 				case 2:				
+					System.out.println("\nDigite o indice da competencia que deseja excluir:\n");
+					competenciaVetor.getVetor();
+										
+					int excluirC = leitorTeclado.nextInt();	
+					System.out.println("Excluindo a competencia: " + competenciaVetor.get(excluirC).getNomeCompetencia());
+					competenciaVetor.remove(excluirC);
 					
+					System.out.println("Excluido com sucesso!");
 					break;
 				case 3:				
 					

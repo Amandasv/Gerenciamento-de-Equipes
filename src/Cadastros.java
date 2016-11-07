@@ -26,14 +26,14 @@ public class Cadastros {
 		int numCompetencias = leitorTeclado.nextInt();
 		
 		Projeto projeto = new Projeto(nome, inicio, fim, numCompetencias);
-		System.out.println("Digite o indice da competencia desejada:");
+		System.out.println("\nDigite o indice da competencia desejada:\n");
 		competenciaVetor.getVetor();
 		
 		for (int i = 0; i < numCompetencias; i++) {
-			System.out.println("Competencia [" + (i+1) + "]:");
+			System.out.println("\nCompetencia [" + (i+1) + "]:");
 			int escolhido = leitorTeclado.nextInt();				
 			String nomeCompetencia = competenciaVetor.get(escolhido).getNomeCompetencia();
-			System.out.println("Competencia [" + (i+1) + "]: "+nomeCompetencia);
+			System.out.println("\nCompetencia [" + (i+1) + "]: "+nomeCompetencia);
 			projeto.setCompetencia(i, nomeCompetencia);
 		}	
 		
@@ -67,20 +67,20 @@ public class Cadastros {
 		}		
 		
 		funcionarioVetor.append(funcionario);
-		System.out.println("Funcionário cadastrado com sucesso");		
+		System.out.println("Funcionário cadastrado com sucesso!!");		
 	}
 	
 	public void cadastraCompetencias(Vetor<Competencia> competenciaVetor){
-		System.out.println("Competencias atuais:");
+		System.out.println("\nCompetencias atuais:\n");
 		competenciaVetor.getVetor();
 		
-		System.out.println("Nome da nova competencia: ");
+		System.out.println("\nNome da nova competencia: ");
 		String nome = leitorTeclado.nextLine();
 		
 		Competencia competencia = new Competencia(nome);
 		
 		competenciaVetor.append(competencia);
-		System.out.println("Competencia cadastrada com sucesso");
+		System.out.println("Competencia cadastrada com sucesso!!");
 	}
 	
 }
