@@ -18,13 +18,21 @@ public class Vetor <V> {
 				novo[i] = dados[i];
 			}
 			dados = novo;
-		}
-		
+		}		
 	}
 	
 	public V get(int index){
 		validaIndex(index);
 		return dados[index];
+	}
+	
+	public void getVetor(){
+		for(int i = 0; i < dados.length; i++){
+			if(dados[i] != null){
+				System.out.print("Indice: " + i + " | ");
+				System.out.println(dados[i] + "\n");
+			}
+		}		
 	}
 	
 	public int size() {

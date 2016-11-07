@@ -12,8 +12,7 @@ public class Projeto {
 		this.dataInicio = inicio;
 		this.dataFim = fim;
 		this.numCompetencias = numCompetencias;
-		this.competencias = new String[this.numCompetencias];
-		
+		this.competencias = new String[this.numCompetencias];		
 	}
 	
 	public void setCompetencia(int competencia, String nomeCompetencia) {
@@ -26,13 +25,18 @@ public class Projeto {
 	@Override
 	public String toString() {
 		String informacoes =  "Nome: " + nome + " | Inicio:" + dataInicio + " | Fim: " + dataFim + 
-				" | numero competencias: " + numCompetencias + " | competencias: ";
+				"\nCompetencias: " + numCompetencias + "(";
 		String competencia= "";
 		for (int i=0;i<numCompetencias;i++) {
-			competencia = competencia + competencias[i] +", ";
+			if(i != numCompetencias-1)
+				competencia = competencia + competencias[i] +", ";
+			else
+				competencia = competencia + competencias[i] +");";
 		} 
 				
 		return informacoes + competencia;
 	}
 }
+
+
 

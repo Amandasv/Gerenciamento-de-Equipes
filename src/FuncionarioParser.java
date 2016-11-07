@@ -6,7 +6,7 @@ public class FuncionarioParser implements Parser<Funcionario>{
 		arquivo.useDelimiter(";");
 		
 		String nome = arquivo.next();
-		String salario = arquivo.next();
+		double salario = Double.parseDouble(arquivo.next());
 		int numCompetencias = arquivo.nextInt();		
 		
 		Funcionario funcionario = new Funcionario(nome, salario, numCompetencias);		
