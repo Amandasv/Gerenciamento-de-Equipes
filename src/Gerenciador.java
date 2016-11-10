@@ -228,9 +228,6 @@ public class Gerenciador {
 					
 					System.out.println("Excluido com sucesso!");
 					break;
-				case 3:				
-					
-					break;
 				case 4:
 					System.out.println("\n>Funcionarios atuais:\n");
 					funcionarioVetor.getVetor();
